@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="generated">
+      <UniqueIdentifier>{ef397b7b-1192-4d44-93ed-fadaec7622e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code Generation">
+      <UniqueIdentifier>{32e07b4d-dd9d-4e27-9738-ded6fb468525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code Generation\Header_Files">
+      <UniqueIdentifier>{6d4f64d8-733e-4f78-b818-07e14e0d8289}</UniqueIdentifier>
+      <Extensions>h;hpp</Extensions>
+    </Filter>
+    <Filter Include="Code Generation\Header_Files\Types">
+      <UniqueIdentifier>{3207d731-845e-48a9-8e69-875bbab02eb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code Generation\Header_Files\Exception">
+      <UniqueIdentifier>{1878a1e1-00ea-417e-928a-1fb4c29f698b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code Generation\Header_Files\Utilities">
+      <UniqueIdentifier>{9a7c1071-d5bb-4fc4-8733-5f2f96b4dcbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code Generation\Source_Files">
+      <UniqueIdentifier>{1bc94b21-8dc6-4c43-90a0-5130d61a2155}</UniqueIdentifier>
+      <Extensions>cpp;c</Extensions>
+    </Filter>
+    <Filter Include="Code Generation\Source_Files\Types">
+      <UniqueIdentifier>{c661cdbe-27a0-46ee-8f66-ecc09a2a06c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code Generation\Source_Files\Exceptions">
+      <UniqueIdentifier>{23e61866-6f97-4723-9fe4-344e081eedb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code Generation\Source_Files\Utilities">
+      <UniqueIdentifier>{26ef5089-58ab-46b1-a71d-efd073cd9f1b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneralVisitor.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneralListener.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\NobilisBaseListener.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\NobilisBaseVisitor.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\NobilisLexer.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\NobilisListener.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\NobilisParser.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\NobilisVisitor.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\syntaxException.cpp">
+      <Filter>Code Generation\Source_Files\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\typeException.cpp">
+      <Filter>Code Generation\Source_Files\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\indentationException.cpp">
+      <Filter>Code Generation\Source_Files\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\interperterException.cpp">
+      <Filter>Code Generation\Source_Files\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\nameErrorException.cpp">
+      <Filter>Code Generation\Source_Files\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\type.cpp">
+      <Filter>Code Generation\Source_Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\void.cpp">
+      <Filter>Code Generation\Source_Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\boolean.cpp">
+      <Filter>Code Generation\Source_Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\integer.cpp">
+      <Filter>Code Generation\Source_Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\list.cpp">
+      <Filter>Code Generation\Source_Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\sequence.cpp">
+      <Filter>Code Generation\Source_Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\helper.cpp">
+      <Filter>Code Generation\Source_Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\usefulFunctions.cpp">
+      <Filter>Code Generation\Source_Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code Generation\String.cpp">
+      <Filter>Code Generation\Source_Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneralListener.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneralVisitor.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\NobilisBaseListener.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\NobilisBaseVisitor.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\NobilisLexer.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\NobilisListener.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\NobilisParser.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\NobilisVisitor.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\syntaxException.h">
+      <Filter>Code Generation\Header_Files\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\typeException.h">
+      <Filter>Code Generation\Header_Files\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\indentationException.h">
+      <Filter>Code Generation\Header_Files\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\interperterException.h">
+      <Filter>Code Generation\Header_Files\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\nameErrorException.h">
+      <Filter>Code Generation\Header_Files\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\void.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\boolean.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\integer.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\list.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\type.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\helper.h">
+      <Filter>Code Generation\Header_Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\usefulFunctions.h">
+      <Filter>Code Generation\Header_Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\sequence.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code Generation\String.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\generated\Nobilis.interp">
+      <Filter>generated</Filter>
+    </None>
+    <None Include="..\..\generated\Nobilis.tokens">
+      <Filter>generated</Filter>
+    </None>
+    <None Include="..\..\generated\NobilisLexer.interp">
+      <Filter>generated</Filter>
+    </None>
+    <None Include="..\..\generated\NobilisLexer.tokens">
+      <Filter>generated</Filter>
+    </None>
+    <None Include="..\..\Nobilis.g4">
+      <Filter>generated</Filter>
+    </None>
+  </ItemGroup>
+</Project>

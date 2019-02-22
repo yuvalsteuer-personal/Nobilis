@@ -2,38 +2,59 @@ grammar Nobilis;
 
 
 
-
-
+@lexer::header
+{
+}
+@lexer::preinclude { 	/* lexer postinclude section */
+	#include "NobilisParser.h"
+	#include <regex>
+	#include <memory>
+	#ifndef _WIN32
+		#pragma GCC diagnostic ignored "-Wunused-parameter"
+	#endif
+	/* lexer precinclude section */
+}
+@lexer::postinclude{ }
+// Directly preceds the lexer class declaration in the h file (e.g. for additional types etc.).
+@lexer::context {/* lexer context section */}
+@lexer::members
+{
+private:
+	int opened ;
+}
 
 /*
  * parser rules
  */
 
 
-stmt				:	function_declare | expr												;
-function_declare	:	declare_stmt parameters												;
-expr				:	  power_expr 
-						| muldivmod_expr
-						| arith_expr 
-						| paren_expr 
-						| unary_expr 
-						| atom	
+stmt				:	function_declare | expr																;
+function_declare	:	declare_stmt parameters																;
+expr				:		'(' expr ')'													#parenExpr
+						|	<assoc=right> left=expr (op='**') right=expr					#powerExpr
+						|	<assoc=left>  left=expr (op=('*'|'/'|'//'|'%')) right=expr		#muldivmodExpr
+						|	<assoc=left>  left=expr (op=('+'|'-')) right=expr				#arithExpr
+						|	op=('+'|'-') right=expr											#unaryExpr
+						|	atom															#atomExpr
 						;
-power_expr			:	expr (op=('**')) expr												;
-muldivmod_expr		:	expr (op=('*'|'/'|'//'|'%')) expr									;
-arith_expr			:	expr (op=('+'|'-')) expr											;
-paren_expr			:	'(' expr ')'														;
-unary_expr			:	(op=('+'|'-'))(paren_expr | unary_expr | atom)						;
-atom				:	NAME | STRING | NUMBER | TRUE | FALSE								;
-declare_stmt		:	('integer' | 'float' | 'boolean' | 'string' | 'object') ':' NAME	;										;
-parameters			:	'(' ((declare_stmt ',')* declare_stmt)?  ')'						;
+/*
+power_expr			:	expr (op='**') expr																	;
+muldivmod_expr		:	expr (op=('*'|'/'|'//'|'%')) expr													;
+arith_expr			:	expr (op=('+'|'-')) expr															;
+paren_expr			:	'(' expr ')'																		;
+unary_expr			:	(op=('+'|'-'))(paren_expr | unary_expr | atom)										;
+*/
+atom				:	NAME | STRING | NUMBER | TRUE | FALSE												;
+declare_stmt		:	('integer' | 'float' | 'boolean' | 'string' | 'object') ':' NAME					;										
+parameters			:	'(' ((declare_stmt ',')* declare_stmt)?  ')'										;
+
 /*
 * lexer rules
 */
-NAME : [_A-Za-z][\w\d_]*;
-STRING : (\"(\\.|[^"\\])*\")|(['](\\.|[^"\\])*[']);
+NAME : [_A-Za-z][_A-Za-z0-9]*;
+STRING: ('"' (ESC|.)*? '"') | ('\'' (ESC_SINGLE|.)*? '\'');
 NUMBER : INTEGER | FLOAT;
-INTEGER : \d+;
+INTEGER : [0-9]+;
 FLOAT : (INTEGER)? '.' (INTEGER)?;
 TRUE : 'true';
 FALSE : 'false';
@@ -47,15 +68,15 @@ OBJECT_TYPE : 'object';
 
 DOT : '.';
 STAR : '*';
-OPEN_PAREN : '(' { opened++; };
-CLOSE_PAREN : ')' { opened--; };
+OPEN_PAREN : '(' {opened++;};
+CLOSE_PAREN : ')' {opened--;};
 COMMA : ',';
 COLON : ':';
 SEMI_COLON : ';';
 POWER : '**';
 ASSIGN : '=';
-OPEN_BRACK : '[' { opened++; };
-CLOSE_BRACK : ']' { opened--; };
+OPEN_BRACK : '[' {opened++;};
+CLOSE_BRACK : ']' {opened--;};
 OR_OP : '|';
 XOR : '^';
 AND_OP : '&';
@@ -67,8 +88,8 @@ DIV : '/';
 MOD : '%';
 IDIV : '//';
 NOT_OP : '~';
-OPEN_BRACE : '{' { opened++; };
-CLOSE_BRACE : '}' { opened--; };
+OPEN_BRACE : '{' {opened++;};
+CLOSE_BRACE : '}' {opened--;};
 LESS_THAN : '<';
 GREATER_THAN : '>';
 EQUALS : '==';
@@ -105,5 +126,6 @@ fragment LINE_JOINING
  : '\\' SPACES? ( '\r'? '\n' | '\r' | '\f')
  ;
 
-
+ fragment ESC : '\\"' | '\\\\' ;
+ fragment ESC_SINGLE:   '\\\'' | '\\\\' ;
 
