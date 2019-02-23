@@ -116,6 +116,9 @@
     <ClCompile Include="float.cpp">
       <Filter>Code Generation\Source_Files\Types</Filter>
     </ClCompile>
+    <ClCompile Include="number.cpp">
+      <Filter>Code Generation\Source_Files\Types</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneralListener.h">
@@ -185,6 +188,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="float.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="number.h">
       <Filter>Code Generation\Header_Files\Types</Filter>
     </ClInclude>
   </ItemGroup>

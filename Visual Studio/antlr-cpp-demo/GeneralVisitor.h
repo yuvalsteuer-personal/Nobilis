@@ -3,7 +3,7 @@
 #include "NobilisVisitor.h"
 #include "NobilisParser.h"
 #include "NobilisBaseVisitor.h"
-
+#include "types.h"
 namespace antlrcpptest
 {
 	class GeneralVisitor : public NobilisBaseVisitor

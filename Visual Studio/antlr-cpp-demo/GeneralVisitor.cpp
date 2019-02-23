@@ -65,32 +65,27 @@ antlrcpp::Any GeneralVisitor::visitNameAtom(NobilisParser::NameAtomContext * ctx
 
 antlrcpp::Any GeneralVisitor::visitStringAtom(NobilisParser::StringAtomContext * ctx)
 {
-	std::cout << "(String)";
-	return visitChildren(ctx);
+	return new String(ctx->getText(),true);
 }
 
 antlrcpp::Any GeneralVisitor::visitIntegerAtom(NobilisParser::IntegerAtomContext * ctx)
 {
-	std::cout << "(Integer)";
-	return visitChildren(ctx);
+	return new Float(atoi(ctx->getText().c_str()), true);
 }
 
 antlrcpp::Any GeneralVisitor::visitFloatAtom(NobilisParser::FloatAtomContext * ctx)
 {
-	std::cout << "(Float)";
-	return visitChildren(ctx);
+	return new Float(atof(ctx->getText().c_str()), true);
 }
 
 antlrcpp::Any GeneralVisitor::visitTrueAtom(NobilisParser::TrueAtomContext * ctx)
 {
-	std::cout << "(True)";
-	return visitChildren(ctx);
+	return new Boolean(true, true);
 }
 
 antlrcpp::Any GeneralVisitor::visitFalseAtom(NobilisParser::FalseAtomContext * ctx)
 {
-	std::cout << "(False)";
-	return visitChildren(ctx);
+	return new Boolean(false, true);
 }
 
 /*antlrcpp::Any GeneralVisitor::visitAtom(NobilisParser::AtomContext * ctx)
