@@ -36,7 +36,17 @@ public:
 
     virtual antlrcpp::Any visitMuldivmodExpr(NobilisParser::MuldivmodExprContext *context) = 0;
 
-    virtual antlrcpp::Any visitAtom(NobilisParser::AtomContext *context) = 0;
+    virtual antlrcpp::Any visitNameAtom(NobilisParser::NameAtomContext *context) = 0;
+
+    virtual antlrcpp::Any visitStringAtom(NobilisParser::StringAtomContext *context) = 0;
+
+    virtual antlrcpp::Any visitFloatAtom(NobilisParser::FloatAtomContext *context) = 0;
+
+    virtual antlrcpp::Any visitIntegerAtom(NobilisParser::IntegerAtomContext *context) = 0;
+
+    virtual antlrcpp::Any visitTrueAtom(NobilisParser::TrueAtomContext *context) = 0;
+
+    virtual antlrcpp::Any visitFalseAtom(NobilisParser::FalseAtomContext *context) = 0;
 
     virtual antlrcpp::Any visitDeclare_stmt(NobilisParser::Declare_stmtContext *context) = 0;
 

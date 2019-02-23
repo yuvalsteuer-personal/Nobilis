@@ -35,7 +35,7 @@ expr				:		'(' expr ')'													#parenExpr
 						|	<assoc=left>  left=expr (op=('*'|'/'|'//'|'%')) right=expr		#muldivmodExpr
 						|	<assoc=left>  left=expr (op=('+'|'-')) right=expr				#arithExpr
 						|	op=('+'|'-') right=expr											#unaryExpr
-						|	atom															#atomExpr
+						|	atom															#atomExpr	
 						;
 /*
 power_expr			:	expr (op='**') expr																	;
@@ -44,7 +44,13 @@ arith_expr			:	expr (op=('+'|'-')) expr															;
 paren_expr			:	'(' expr ')'																		;
 unary_expr			:	(op=('+'|'-'))(paren_expr | unary_expr | atom)										;
 */
-atom				:	NAME | STRING | NUMBER | TRUE | FALSE												;
+atom				:		NAME															#nameAtom
+						|	STRING															#stringAtom
+						|	FLOAT															#floatAtom	
+						|	INTEGER															#integerAtom	
+						|	TRUE															#trueAtom
+						|	FALSE															#falseAtom
+						;
 declare_stmt		:	('integer' | 'float' | 'boolean' | 'string' | 'object') ':' NAME					;										
 parameters			:	'(' ((declare_stmt ',')* declare_stmt)?  ')'										;
 
@@ -53,9 +59,9 @@ parameters			:	'(' ((declare_stmt ',')* declare_stmt)?  ')'										;
 */
 NAME : [_A-Za-z][_A-Za-z0-9]*;
 STRING: ('"' (ESC|.)*? '"') | ('\'' (ESC_SINGLE|.)*? '\'');
-NUMBER : INTEGER | FLOAT;
-INTEGER : [0-9]+;
 FLOAT : (INTEGER)? '.' (INTEGER)?;
+INTEGER : [0-9]+;
+NUMBER : INTEGER | FLOAT;
 TRUE : 'true';
 FALSE : 'false';
 TYPE : (INT_TYPE | FLOAT_TYPE | BOOLEAN_TYPE | STRING_TYPE | OBJECT_TYPE);

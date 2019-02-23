@@ -1,5 +1,6 @@
 #pragma once
 #include "sequence.h"
+#include "object.h"
 #include <vector>
 #include <string>
 
@@ -8,7 +9,7 @@
 class List : public Sequence
 {
 private:
-	std::vector<Type*> _lst;
+	std::vector<Object*> _lst;
 
 public:
 	List(const std::string& strList, bool isTemp = false);

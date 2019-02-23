@@ -6,7 +6,7 @@
 
 #include "antlr4-runtime.h"
 #include "NobilisVisitor.h"
-#include "NobilisParser.h"
+
 
 namespace antlrcpptest {
 
@@ -17,27 +17,69 @@ namespace antlrcpptest {
 class  NobilisBaseVisitor : public NobilisVisitor {
 public:
 
-	virtual antlrcpp::Any visitStmt(NobilisParser::StmtContext *ctx) override;
+  virtual antlrcpp::Any visitStmt(NobilisParser::StmtContext *ctx) override {
+    return visitChildren(ctx);
+  }
 
-	virtual antlrcpp::Any visitFunction_declare(NobilisParser::Function_declareContext *ctx) override;
+  virtual antlrcpp::Any visitFunction_declare(NobilisParser::Function_declareContext *ctx) override {
+    return visitChildren(ctx);
+  }
 
-	virtual antlrcpp::Any visitUnaryExpr(NobilisParser::UnaryExprContext *ctx) override;
+  virtual antlrcpp::Any visitUnaryExpr(NobilisParser::UnaryExprContext *ctx) override {
+    return visitChildren(ctx);
+  }
 
-	virtual antlrcpp::Any visitPowerExpr(NobilisParser::PowerExprContext *ctx) override;
+  virtual antlrcpp::Any visitPowerExpr(NobilisParser::PowerExprContext *ctx) override {
+    return visitChildren(ctx);
+  }
 
-	virtual antlrcpp::Any visitAtomExpr(NobilisParser::AtomExprContext *ctx) override;
+  virtual antlrcpp::Any visitAtomExpr(NobilisParser::AtomExprContext *ctx) override {
+    return visitChildren(ctx);
+  }
 
-	virtual antlrcpp::Any visitParenExpr(NobilisParser::ParenExprContext *ctx) override;
+  virtual antlrcpp::Any visitParenExpr(NobilisParser::ParenExprContext *ctx) override {
+    return visitChildren(ctx);
+  }
 
-	virtual antlrcpp::Any visitArithExpr(NobilisParser::ArithExprContext *ctx) override;
+  virtual antlrcpp::Any visitArithExpr(NobilisParser::ArithExprContext *ctx) override {
+    return visitChildren(ctx);
+  }
 
-	virtual antlrcpp::Any visitMuldivmodExpr(NobilisParser::MuldivmodExprContext *ctx) override;
+  virtual antlrcpp::Any visitMuldivmodExpr(NobilisParser::MuldivmodExprContext *ctx) override {
+    return visitChildren(ctx);
+  }
 
-	virtual antlrcpp::Any visitAtom(NobilisParser::AtomContext *ctx) override;
+  virtual antlrcpp::Any visitNameAtom(NobilisParser::NameAtomContext *ctx) override {
+    return visitChildren(ctx);
+  }
 
-	virtual antlrcpp::Any visitDeclare_stmt(NobilisParser::Declare_stmtContext *ctx) override;
+  virtual antlrcpp::Any visitStringAtom(NobilisParser::StringAtomContext *ctx) override {
+    return visitChildren(ctx);
+  }
 
-	virtual antlrcpp::Any visitParameters(NobilisParser::ParametersContext *ctx) override;
+  virtual antlrcpp::Any visitFloatAtom(NobilisParser::FloatAtomContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitIntegerAtom(NobilisParser::IntegerAtomContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitTrueAtom(NobilisParser::TrueAtomContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitFalseAtom(NobilisParser::FalseAtomContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitDeclare_stmt(NobilisParser::Declare_stmtContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitParameters(NobilisParser::ParametersContext *ctx) override {
+    return visitChildren(ctx);
+  }
 
 
 };

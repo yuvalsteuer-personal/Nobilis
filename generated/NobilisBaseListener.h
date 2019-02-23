@@ -42,8 +42,23 @@ public:
   virtual void enterMuldivmodExpr(NobilisParser::MuldivmodExprContext * /*ctx*/) override { }
   virtual void exitMuldivmodExpr(NobilisParser::MuldivmodExprContext * /*ctx*/) override { }
 
-  virtual void enterAtom(NobilisParser::AtomContext * /*ctx*/) override { }
-  virtual void exitAtom(NobilisParser::AtomContext * /*ctx*/) override { }
+  virtual void enterNameAtom(NobilisParser::NameAtomContext * /*ctx*/) override { }
+  virtual void exitNameAtom(NobilisParser::NameAtomContext * /*ctx*/) override { }
+
+  virtual void enterStringAtom(NobilisParser::StringAtomContext * /*ctx*/) override { }
+  virtual void exitStringAtom(NobilisParser::StringAtomContext * /*ctx*/) override { }
+
+  virtual void enterFloatAtom(NobilisParser::FloatAtomContext * /*ctx*/) override { }
+  virtual void exitFloatAtom(NobilisParser::FloatAtomContext * /*ctx*/) override { }
+
+  virtual void enterIntegerAtom(NobilisParser::IntegerAtomContext * /*ctx*/) override { }
+  virtual void exitIntegerAtom(NobilisParser::IntegerAtomContext * /*ctx*/) override { }
+
+  virtual void enterTrueAtom(NobilisParser::TrueAtomContext * /*ctx*/) override { }
+  virtual void exitTrueAtom(NobilisParser::TrueAtomContext * /*ctx*/) override { }
+
+  virtual void enterFalseAtom(NobilisParser::FalseAtomContext * /*ctx*/) override { }
+  virtual void exitFalseAtom(NobilisParser::FalseAtomContext * /*ctx*/) override { }
 
   virtual void enterDeclare_stmt(NobilisParser::Declare_stmtContext * /*ctx*/) override { }
   virtual void exitDeclare_stmt(NobilisParser::Declare_stmtContext * /*ctx*/) override { }

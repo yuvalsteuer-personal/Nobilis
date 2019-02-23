@@ -11,7 +11,3 @@ std::string Sequence::type() const
 	return std::string("<type \'Sequence\'>");
 }
 
-bool Sequence::isSequence() const
-{
-	return true;
-}

@@ -40,8 +40,23 @@ public:
   virtual void enterMuldivmodExpr(NobilisParser::MuldivmodExprContext *ctx) = 0;
   virtual void exitMuldivmodExpr(NobilisParser::MuldivmodExprContext *ctx) = 0;
 
-  virtual void enterAtom(NobilisParser::AtomContext *ctx) = 0;
-  virtual void exitAtom(NobilisParser::AtomContext *ctx) = 0;
+  virtual void enterNameAtom(NobilisParser::NameAtomContext *ctx) = 0;
+  virtual void exitNameAtom(NobilisParser::NameAtomContext *ctx) = 0;
+
+  virtual void enterStringAtom(NobilisParser::StringAtomContext *ctx) = 0;
+  virtual void exitStringAtom(NobilisParser::StringAtomContext *ctx) = 0;
+
+  virtual void enterFloatAtom(NobilisParser::FloatAtomContext *ctx) = 0;
+  virtual void exitFloatAtom(NobilisParser::FloatAtomContext *ctx) = 0;
+
+  virtual void enterIntegerAtom(NobilisParser::IntegerAtomContext *ctx) = 0;
+  virtual void exitIntegerAtom(NobilisParser::IntegerAtomContext *ctx) = 0;
+
+  virtual void enterTrueAtom(NobilisParser::TrueAtomContext *ctx) = 0;
+  virtual void exitTrueAtom(NobilisParser::TrueAtomContext *ctx) = 0;
+
+  virtual void enterFalseAtom(NobilisParser::FalseAtomContext *ctx) = 0;
+  virtual void exitFalseAtom(NobilisParser::FalseAtomContext *ctx) = 0;
 
   virtual void enterDeclare_stmt(NobilisParser::Declare_stmtContext *ctx) = 0;
   virtual void exitDeclare_stmt(NobilisParser::Declare_stmtContext *ctx) = 0;

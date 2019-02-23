@@ -74,50 +74,47 @@
     <ClCompile Include="..\..\generated\NobilisVisitor.cpp">
       <Filter>generated</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Code Generation\syntaxException.cpp">
+    <ClCompile Include="indentationException.cpp">
       <Filter>Code Generation\Source_Files\Exceptions</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Code Generation\typeException.cpp">
+    <ClCompile Include="interperterException.cpp">
       <Filter>Code Generation\Source_Files\Exceptions</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Code Generation\indentationException.cpp">
+    <ClCompile Include="nameErrorException.cpp">
       <Filter>Code Generation\Source_Files\Exceptions</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Code Generation\interperterException.cpp">
+    <ClCompile Include="syntaxException.cpp">
       <Filter>Code Generation\Source_Files\Exceptions</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Code Generation\nameErrorException.cpp">
+    <ClCompile Include="typeException.cpp">
       <Filter>Code Generation\Source_Files\Exceptions</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Code Generation\type.cpp">
+    <ClCompile Include="boolean.cpp">
       <Filter>Code Generation\Source_Files\Types</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Code Generation\void.cpp">
+    <ClCompile Include="integer.cpp">
       <Filter>Code Generation\Source_Files\Types</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Code Generation\boolean.cpp">
-      <Filter>Code Generation\Source_Files\Types</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code Generation\integer.cpp">
-      <Filter>Code Generation\Source_Files\Types</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code Generation\list.cpp">
-      <Filter>Code Generation\Source_Files\Types</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code Generation\sequence.cpp">
-      <Filter>Code Generation\Source_Files\Types</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code Generation\helper.cpp">
-      <Filter>Code Generation\Source_Files\Utilities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code Generation\usefulFunctions.cpp">
-      <Filter>Code Generation\Source_Files\Utilities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Code Generation\String.cpp">
+    <ClCompile Include="list.cpp">
       <Filter>Code Generation\Source_Files\Types</Filter>
     </ClCompile>
     <ClCompile Include="object.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Code Generation\Source_Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="sequence.cpp">
+      <Filter>Code Generation\Source_Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>Code Generation\Source_Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="void.cpp">
+      <Filter>Code Generation\Source_Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="usefulFunctions.cpp">
+      <Filter>Code Generation\Source_Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="float.cpp">
+      <Filter>Code Generation\Source_Files\Types</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -145,50 +142,50 @@
     <ClInclude Include="..\..\generated\NobilisVisitor.h">
       <Filter>generated</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Code Generation\syntaxException.h">
+    <ClInclude Include="indentationException.h">
       <Filter>Code Generation\Header_Files\Exception</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Code Generation\typeException.h">
+    <ClInclude Include="interperterException.h">
       <Filter>Code Generation\Header_Files\Exception</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Code Generation\indentationException.h">
+    <ClInclude Include="nameErrorException.h">
       <Filter>Code Generation\Header_Files\Exception</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Code Generation\interperterException.h">
+    <ClInclude Include="syntaxException.h">
       <Filter>Code Generation\Header_Files\Exception</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Code Generation\nameErrorException.h">
+    <ClInclude Include="typeException.h">
       <Filter>Code Generation\Header_Files\Exception</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Code Generation\void.h">
+    <ClInclude Include="boolean.h">
       <Filter>Code Generation\Header_Files\Types</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Code Generation\boolean.h">
+    <ClInclude Include="integer.h">
       <Filter>Code Generation\Header_Files\Types</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Code Generation\integer.h">
-      <Filter>Code Generation\Header_Files\Types</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code Generation\list.h">
-      <Filter>Code Generation\Header_Files\Types</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code Generation\type.h">
-      <Filter>Code Generation\Header_Files\Types</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code Generation\helper.h">
-      <Filter>Code Generation\Header_Files\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code Generation\usefulFunctions.h">
-      <Filter>Code Generation\Header_Files\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code Generation\sequence.h">
-      <Filter>Code Generation\Header_Files\Types</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code Generation\String.h">
+    <ClInclude Include="list.h">
       <Filter>Code Generation\Header_Files\Types</Filter>
     </ClInclude>
     <ClInclude Include="object.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="sequence.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="void.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="usefulFunctions.h">
+      <Filter>Code Generation\Header_Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="types.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="float.h">
+      <Filter>Code Generation\Header_Files\Types</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

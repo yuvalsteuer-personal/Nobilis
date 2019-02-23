@@ -18,7 +18,6 @@ public:
 
 	//virtuals
 	virtual bool isPrintable()const = 0;
-	virtual std::string toString()const = 0;
-	virtual std::string type()const = 0;
-	virtual bool isSequence()const;
+	virtual std::string toString()const;
+	virtual std::string type()const;
 };

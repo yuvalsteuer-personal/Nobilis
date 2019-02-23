@@ -7,14 +7,13 @@
 #include "antlr4-runtime.h"
 
 
-
 namespace antlrcpptest {
 
 
 class  NobilisParser : public antlr4::Parser {
 public:
   enum {
-    NAME = 1, STRING = 2, NUMBER = 3, INTEGER = 4, FLOAT = 5, TRUE = 6, 
+    NAME = 1, STRING = 2, FLOAT = 3, INTEGER = 4, NUMBER = 5, TRUE = 6, 
     FALSE = 7, TYPE = 8, INT_TYPE = 9, FLOAT_TYPE = 10, BOOLEAN_TYPE = 11, 
     STRING_TYPE = 12, OBJECT_TYPE = 13, DOT = 14, STAR = 15, OPEN_PAREN = 16, 
     CLOSE_PAREN = 17, COMMA = 18, COLON = 19, SEMI_COLON = 20, POWER = 21, 
@@ -191,18 +190,80 @@ public:
   class  AtomContext : public antlr4::ParserRuleContext {
   public:
     AtomContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *NAME();
-    antlr4::tree::TerminalNode *STRING();
-    antlr4::tree::TerminalNode *NUMBER();
-    antlr4::tree::TerminalNode *TRUE();
-    antlr4::tree::TerminalNode *FALSE();
+   
+    AtomContext() = default;
+    void copyFrom(AtomContext *context);
+    using antlr4::ParserRuleContext::copyFrom;
 
+    virtual size_t getRuleIndex() const override;
+
+   
+  };
+
+  class  NameAtomContext : public AtomContext {
+  public:
+    NameAtomContext(AtomContext *ctx);
+
+    antlr4::tree::TerminalNode *NAME();
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
 
     virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
+  };
+
+  class  FloatAtomContext : public AtomContext {
+  public:
+    FloatAtomContext(AtomContext *ctx);
+
+    antlr4::tree::TerminalNode *FLOAT();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+  };
+
+  class  StringAtomContext : public AtomContext {
+  public:
+    StringAtomContext(AtomContext *ctx);
+
+    antlr4::tree::TerminalNode *STRING();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+  };
+
+  class  FalseAtomContext : public AtomContext {
+  public:
+    FalseAtomContext(AtomContext *ctx);
+
+    antlr4::tree::TerminalNode *FALSE();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+  };
+
+  class  IntegerAtomContext : public AtomContext {
+  public:
+    IntegerAtomContext(AtomContext *ctx);
+
+    antlr4::tree::TerminalNode *INTEGER();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+  };
+
+  class  TrueAtomContext : public AtomContext {
+  public:
+    TrueAtomContext(AtomContext *ctx);
+
+    antlr4::tree::TerminalNode *TRUE();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
   };
 
   AtomContext* atom();

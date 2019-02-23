@@ -340,55 +340,54 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Code Generation\boolean.cpp" />
-    <ClCompile Include="..\..\Code Generation\helper.cpp" />
-    <ClCompile Include="..\..\Code Generation\indentationException.cpp" />
-    <ClCompile Include="..\..\Code Generation\integer.cpp" />
-    <ClCompile Include="..\..\Code Generation\interperterException.cpp" />
-    <ClCompile Include="..\..\Code Generation\list.cpp" />
-    <ClCompile Include="..\..\Code Generation\nameErrorException.cpp" />
-    <ClCompile Include="..\..\Code Generation\sequence.cpp" />
-    <ClCompile Include="..\..\Code Generation\String.cpp" />
-    <ClCompile Include="..\..\Code Generation\syntaxException.cpp" />
-    <ClCompile Include="..\..\Code Generation\type.cpp" />
-    <ClCompile Include="..\..\Code Generation\typeException.cpp" />
-    <ClCompile Include="..\..\Code Generation\usefulFunctions.cpp" />
-    <ClCompile Include="..\..\Code Generation\void.cpp" />
     <ClCompile Include="..\..\generated\NobilisBaseListener.cpp" />
     <ClCompile Include="..\..\generated\NobilisBaseVisitor.cpp" />
     <ClCompile Include="..\..\generated\NobilisLexer.cpp" />
     <ClCompile Include="..\..\generated\NobilisListener.cpp" />
     <ClCompile Include="..\..\generated\NobilisParser.cpp" />
     <ClCompile Include="..\..\generated\NobilisVisitor.cpp" />
+    <ClCompile Include="float.cpp" />
+    <ClCompile Include="indentationException.cpp" />
+    <ClCompile Include="boolean.cpp" />
     <ClCompile Include="GeneralListener.cpp" />
     <ClCompile Include="GeneralVisitor.cpp" />
+    <ClCompile Include="integer.cpp" />
+    <ClCompile Include="interperterException.cpp" />
+    <ClCompile Include="list.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="nameErrorException.cpp" />
     <ClCompile Include="object.cpp" />
+    <ClCompile Include="sequence.cpp" />
+    <ClCompile Include="String.cpp" />
+    <ClCompile Include="syntaxException.cpp" />
+    <ClCompile Include="typeException.cpp" />
+    <ClCompile Include="usefulFunctions.cpp" />
+    <ClCompile Include="void.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Code Generation\boolean.h" />
-    <ClInclude Include="..\..\Code Generation\helper.h" />
-    <ClInclude Include="..\..\Code Generation\indentationException.h" />
-    <ClInclude Include="..\..\Code Generation\integer.h" />
-    <ClInclude Include="..\..\Code Generation\interperterException.h" />
-    <ClInclude Include="..\..\Code Generation\list.h" />
-    <ClInclude Include="..\..\Code Generation\nameErrorException.h" />
-    <ClInclude Include="..\..\Code Generation\sequence.h" />
-    <ClInclude Include="..\..\Code Generation\String.h" />
-    <ClInclude Include="..\..\Code Generation\syntaxException.h" />
-    <ClInclude Include="..\..\Code Generation\type.h" />
-    <ClInclude Include="..\..\Code Generation\typeException.h" />
-    <ClInclude Include="..\..\Code Generation\usefulFunctions.h" />
-    <ClInclude Include="..\..\Code Generation\void.h" />
     <ClInclude Include="..\..\generated\NobilisBaseListener.h" />
     <ClInclude Include="..\..\generated\NobilisBaseVisitor.h" />
     <ClInclude Include="..\..\generated\NobilisLexer.h" />
     <ClInclude Include="..\..\generated\NobilisListener.h" />
     <ClInclude Include="..\..\generated\NobilisParser.h" />
     <ClInclude Include="..\..\generated\NobilisVisitor.h" />
+    <ClInclude Include="boolean.h" />
+    <ClInclude Include="float.h" />
     <ClInclude Include="GeneralListener.h" />
     <ClInclude Include="GeneralVisitor.h" />
+    <ClInclude Include="integer.h" />
+    <ClInclude Include="indentationException.h" />
+    <ClInclude Include="interperterException.h" />
+    <ClInclude Include="list.h" />
+    <ClInclude Include="nameErrorException.h" />
     <ClInclude Include="object.h" />
+    <ClInclude Include="sequence.h" />
+    <ClInclude Include="String.h" />
+    <ClInclude Include="syntaxException.h" />
+    <ClInclude Include="typeException.h" />
+    <ClInclude Include="types.h" />
+    <ClInclude Include="usefulFunctions.h" />
+    <ClInclude Include="void.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\generated\Nobilis.interp" />

@@ -16,6 +16,7 @@
 #include "NobilisLexer.h"
 #include "NobilisParser.h"
 #include "NobilisBaseVisitor.h"
+#include "GeneralVisitor.h"
 //#include "tree/ParseTreeWalker.h"
 //#include <Windows.h>
 //#include "NobilisBaseListener.h"
@@ -28,7 +29,7 @@ using namespace antlrcpp;
 int main(int argc, const char * argv[])
 {
 
-	ANTLRInputStream input("3 ** 4");
+	ANTLRInputStream input("3 ** 4.0");
 	std::cout << input.toString() << std::endl;
 	NobilisLexer lexer(&input);
 	CommonTokenStream tokens(&lexer);
@@ -39,11 +40,8 @@ int main(int argc, const char * argv[])
 	}
 	NobilisParser parser(&tokens);
 	tree::ParseTree *tree = parser.stmt();
-	//tree::ParseTreeWalker python3Walker;//NobilisBaseListener listener;//python3Walker.walk(&listener,tree);
-	NobilisBaseVisitor base_visitor;
-
-	std::cout << base_visitor.visit(tree).as<double>() << std::endl;
-
+	GeneralVisitor general_visitor;
+	general_visitor.visit(tree);
 	std::wstring s = antlrcpp::s2ws(tree->toStringTree(&parser)) + L"\n";
 
 	//OutputDebugString(s.data()); // Only works properly since VS 2015.
