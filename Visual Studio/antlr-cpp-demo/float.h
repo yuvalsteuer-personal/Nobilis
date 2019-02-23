@@ -2,6 +2,7 @@
 
 
 #include "object.h"
+#include "number.h"
 #include <string>
 
 

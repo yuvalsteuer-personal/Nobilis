@@ -1,7 +1,8 @@
 #pragma once
 #pragma once
 
-#include "Object.h"
+#include "object.h"
+#include "number.h"
 #include <string>
 
 
@@ -9,13 +10,13 @@
 class Integer : public Object
 {
 private:
-	int _value = 0;
+	Number _value = 0;
 
 public:
-	Integer(int value = 0, bool isTemp = false) : _value(value), Object(isTemp) {}
+	Integer(Number value = 0, bool isTemp = false) : _value(value), Object(isTemp) {}
 
-	int getValue()const;
-	void setValue(int value);
+	Number getValue()const;
+	void setValue(Number value);
 
 	//virtuals
 public:

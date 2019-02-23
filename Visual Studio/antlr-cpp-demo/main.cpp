@@ -17,6 +17,7 @@
 #include "NobilisParser.h"
 #include "NobilisBaseVisitor.h"
 #include "GeneralVisitor.h"
+#include "number.h"
 //#include "tree/ParseTreeWalker.h"
 //#include <Windows.h>
 //#include "NobilisBaseListener.h"
@@ -28,8 +29,9 @@ using namespace antlrcpp;
 
 int main(int argc, const char * argv[])
 {
-
-	ANTLRInputStream input("3 ** 4.0");
+	Number n = 0.1;
+	std::cout << n << std::endl;
+	ANTLRInputStream input("(4+2)**2");
 	std::cout << input.toString() << std::endl;
 	NobilisLexer lexer(&input);
 	CommonTokenStream tokens(&lexer);

@@ -30,21 +30,14 @@ private:
 
 stmt				:	function_declare | expr																;
 function_declare	:	declare_stmt parameters																;
-expr				:		'(' expr ')'													#parenExpr
+expr				:		'(' middle=expr ')'												#parenExpr
 						|	<assoc=right> left=expr (op='**') right=expr					#powerExpr
 						|	<assoc=left>  left=expr (op=('*'|'/'|'//'|'%')) right=expr		#muldivmodExpr
 						|	<assoc=left>  left=expr (op=('+'|'-')) right=expr				#arithExpr
 						|	op=('+'|'-') right=expr											#unaryExpr
 						|	atom															#atomExpr	
 						;
-/*
-power_expr			:	expr (op='**') expr																	;
-muldivmod_expr		:	expr (op=('*'|'/'|'//'|'%')) expr													;
-arith_expr			:	expr (op=('+'|'-')) expr															;
-paren_expr			:	'(' expr ')'																		;
-unary_expr			:	(op=('+'|'-'))(paren_expr | unary_expr | atom)										;
-*/
-atom				:		NAME															#nameAtom
+atom				:		atom_value=NAME													#nameAtom
 						|	STRING															#stringAtom
 						|	FLOAT															#floatAtom	
 						|	INTEGER															#integerAtom	

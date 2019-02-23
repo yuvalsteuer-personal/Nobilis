@@ -24,30 +24,34 @@ antlrcpp::Any GeneralVisitor::visitUnaryExpr(NobilisParser::UnaryExprContext * c
 
 antlrcpp::Any GeneralVisitor::visitPowerExpr(NobilisParser::PowerExprContext * ctx)
 {
-	auto left = visit(ctx->left);
-
-	auto right = visit(ctx->right);
-	//if(visit.)
+	auto v = visit(ctx->expr(0)).as<Integer*>();
+	std::cout << "power result: " << v->toString() << std::endl;
 	auto result = (int)pow(atoi(ctx->left->getText().c_str()), atoi(ctx->right->getText().c_str()));
 	return pow(atoi(ctx->left->getText().c_str()), atoi(ctx->right->getText().c_str()));
-	//return visitChildren(ctx);
 }
 
 antlrcpp::Any GeneralVisitor::visitAtomExpr(NobilisParser::AtomExprContext * ctx)
 {
-	std::cout << "<ATOM_EXPR>";
+	xt
 	return visitChildren(ctx);
 }
 
 antlrcpp::Any GeneralVisitor::visitParenExpr(NobilisParser::ParenExprContext * ctx)
 {
-	return visitChildren(ctx);
+	std::cout << std::endl << ctx->expr()->getText() << std::endl;
+	ctx->middle
+	auto v = visit(ctx->expr()).as<Integer*>();
+	std::cout << v->toString();
+	return v;
 }
 
 antlrcpp::Any GeneralVisitor::visitArithExpr(NobilisParser::ArithExprContext * ctx)
 {
-
-	return visitChildren(ctx);
+	switch (ctx->op->getType())
+	{
+		case ADD: return visit(ctx->expr(0)).as<Integer*>()->getValue() + visit(ctx->expr(1)).as<Integer*>()->getValue();
+		case MINUS: return visit(ctx->expr(0)).as<Integer*>()->getValue() - visit(ctx->expr(1)).as<Integer*>()->getValue();
+	}
 }
 
 antlrcpp::Any GeneralVisitor::visitMuldivmodExpr(NobilisParser::MuldivmodExprContext * ctx)
@@ -58,8 +62,7 @@ antlrcpp::Any GeneralVisitor::visitMuldivmodExpr(NobilisParser::MuldivmodExprCon
 
 
 antlrcpp::Any GeneralVisitor::visitNameAtom(NobilisParser::NameAtomContext * ctx)
-{
-	std::cout << "(Name)";
+{	
 	return visitChildren(ctx);
 }
 
@@ -70,7 +73,7 @@ antlrcpp::Any GeneralVisitor::visitStringAtom(NobilisParser::StringAtomContext *
 
 antlrcpp::Any GeneralVisitor::visitIntegerAtom(NobilisParser::IntegerAtomContext * ctx)
 {
-	return new Float(atoi(ctx->getText().c_str()), true);
+	return new Integer(atoi(ctx->getText().c_str()), true);
 }
 
 antlrcpp::Any GeneralVisitor::visitFloatAtom(NobilisParser::FloatAtomContext * ctx)

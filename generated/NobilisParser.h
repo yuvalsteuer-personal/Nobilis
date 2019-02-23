@@ -140,9 +140,10 @@ public:
   public:
     ParenExprContext(ExprContext *ctx);
 
+    NobilisParser::ExprContext *middle = nullptr;
     antlr4::tree::TerminalNode *OPEN_PAREN();
-    ExprContext *expr();
     antlr4::tree::TerminalNode *CLOSE_PAREN();
+    ExprContext *expr();
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
 

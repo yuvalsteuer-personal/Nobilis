@@ -12,15 +12,15 @@ std::string Integer::type() const
 }
 std::string Integer::toString()const
 {
-	return std::to_string(_value);
+	return _value.to_string();
 }
 
-int Integer::getValue() const
+Number Integer::getValue() const
 {
 	return _value;
 }
 
-void Integer::setValue(int value)
+void Integer::setValue(Number value)
 {
 	_value = value;
 }

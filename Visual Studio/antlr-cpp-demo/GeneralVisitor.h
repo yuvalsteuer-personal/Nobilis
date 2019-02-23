@@ -3,7 +3,9 @@
 #include "NobilisVisitor.h"
 #include "NobilisParser.h"
 #include "NobilisBaseVisitor.h"
+#include "number.h"
 #include "types.h"
+
 namespace antlrcpptest
 {
 	class GeneralVisitor : public NobilisBaseVisitor
@@ -75,9 +77,9 @@ namespace antlrcpptest
 		//virtual antlrcpp::Any visitAtom(NobilisParser::AtomContext *ctx) override;
 
 		virtual antlrcpp::Any visitDeclare_stmt(NobilisParser::Declare_stmtContext *ctx) override;
-
+		
 		virtual antlrcpp::Any visitParameters(NobilisParser::ParametersContext *ctx) override;
-
+		
 		virtual antlrcpp::Any visitStmt(NobilisParser::StmtContext *ctx) override;
 
 		virtual antlrcpp::Any visitFunction_declare(NobilisParser::Function_declareContext *ctx) override;

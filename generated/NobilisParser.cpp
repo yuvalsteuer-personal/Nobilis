@@ -298,12 +298,12 @@ tree::TerminalNode* NobilisParser::ParenExprContext::OPEN_PAREN() {
   return getToken(NobilisParser::OPEN_PAREN, 0);
 }
 
-NobilisParser::ExprContext* NobilisParser::ParenExprContext::expr() {
-  return getRuleContext<NobilisParser::ExprContext>(0);
-}
-
 tree::TerminalNode* NobilisParser::ParenExprContext::CLOSE_PAREN() {
   return getToken(NobilisParser::CLOSE_PAREN, 0);
+}
+
+NobilisParser::ExprContext* NobilisParser::ParenExprContext::expr() {
+  return getRuleContext<NobilisParser::ExprContext>(0);
 }
 
 NobilisParser::ParenExprContext::ParenExprContext(ExprContext *ctx) { copyFrom(ctx); }
@@ -440,7 +440,7 @@ NobilisParser::ExprContext* NobilisParser::expr(int precedence) {
         setState(20);
         match(NobilisParser::OPEN_PAREN);
         setState(21);
-        expr(0);
+        dynamic_cast<ParenExprContext *>(_localctx)->middle = expr(0);
         setState(22);
         match(NobilisParser::CLOSE_PAREN);
         break;
